@@ -74,15 +74,13 @@ namespace Ripl
                     foreach( string schoolName in schoolNames.Split(','))
                     {
                         string trimmedSchoolName = schoolName.Trim();
-                        if(!schoolDict.ContainsKey(schoolName))
+                        if (!schoolDict.ContainsKey(trimmedSchoolName))
                         {
                             School school = new School(trimmedSchoolName);
                             schoolDict[trimmedSchoolName] = school;
-                            Console.WriteLine("School: {0}", trimmedSchoolName);
                         }
 
                         schoolDict[trimmedSchoolName].Applicants.Add(applicant);
-                        Console.WriteLine("Applicant: {0}", applicant.StudentFirstName);
                     }
                 }
             }
@@ -97,6 +95,8 @@ namespace Ripl
                     csvWriter.WriteRecords(schoolDict[schoolName].Applicants);
                 }
             }
+
+            Console.WriteLine("Done");
         }
     }
 }
