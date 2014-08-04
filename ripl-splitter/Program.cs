@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Ripl.Model;
-using Ripl.Csv;
 
 namespace Ripl
 {
